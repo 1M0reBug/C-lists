@@ -13,8 +13,8 @@ OBJ_DIR = obj
 LIB_DEP = #-l[NOM DE LA LIBRAIRIE]
 
 #Liste fichiers .cpp et .O
-SRC = $(PATH_SRC)/main.c
-OBJ = $(PATH_OBJ)/main.o
+SRC = $(PATH_SRC)/main.c $(PATH_SRC)/functions.c
+OBJ = $(PATH_OBJ)/main.o $(PATH_SRC)/functions.o
 
 #Actions
 all : $(EXEC)
@@ -25,6 +25,9 @@ debug : $(EXEC)
 
 
 $(PATH_OBJ)/main.o : $(PATH_SRC)/main.c
+	$(CXX) $(OPTION) -o $@ -c $< -I$(PATH_INC)
+
+$(PATH_OBJ)/functions.o : $(PATH_SRC)/functions.c
 	$(CXX) $(OPTION) -o $@ -c $< -I$(PATH_INC)
 
 $(EXEC) : $(OBJ)
