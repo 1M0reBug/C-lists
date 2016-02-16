@@ -4,7 +4,13 @@
     Description du programme : Déclaration des types
 */
 
-typedef struct maillon{
-    int valeur;
-    struct maillon *suivant;
-}Maillon;
+typedef struct joueur{
+    char* nom;
+    Joueur *suivant;
+    Joueur *precedent;
+}Joueur;
+
+typedef struct liste{
+    Joueur tab[10];
+    int nb_elements;
+}
