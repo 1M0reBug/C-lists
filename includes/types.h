@@ -8,7 +8,7 @@
 */
 
 typedef struct joueur{
-    char* nom;
+    char nom[30];
     int suivant;
     int precedent;
 }Joueur;
@@ -16,6 +16,7 @@ typedef struct joueur{
 typedef struct liste{
     Joueur tab[10];
     int nb_elements;
+    int tete;
 } Liste;
 
 typedef enum bool {true, false} Bool;

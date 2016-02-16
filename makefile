@@ -10,7 +10,6 @@ PATH_OBJ = obj
 #Directories
 OBJ_DIR = obj
 
-LIB_DEP = #-l[NOM DE LA LIBRAIRIE]
 
 #Liste fichiers .cpp et .O
 SRC = $(PATH_SRC)/main.c $(PATH_SRC)/functions.c
