@@ -1,4 +1,4 @@
-EXEC = sapin # [NOM DE L'EXE]
+EXEC = liste # [NOM DE L'EXE]
 CXX = gcc
 OPTION = -Wall -Wextra
 
