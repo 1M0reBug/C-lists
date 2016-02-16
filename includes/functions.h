@@ -13,6 +13,10 @@ Joueur suivant(Liste l, Joueur j);
 Joueur precedent (Liste l, Joueur j);
 void supprimer(Liste* l, Joueur j);
 void ajouter(Liste l, Joueur j);
+Bool isDeleted(Joueur j);
+Bool isHead(Liste l, Joueur j);
+Bool eachPlayerHasLostOnce(Liste l);
+Joueur Tete(Liste l);
 
 
 #endif //FUNCTIONS_H

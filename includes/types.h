@@ -20,6 +20,6 @@ typedef struct liste{
     int tete;
 } Liste;
 
-typedef enum bool {true, false} Bool;
+typedef enum bool {false, true} Bool;
 
 #endif //TYPES_H

@@ -12,8 +12,8 @@ OBJ_DIR = obj
 
 
 #Liste fichiers .cpp et .O
-SRC = $(PATH_SRC)/main.c $(PATH_SRC)/functions.c
-OBJ = $(PATH_OBJ)/main.o $(PATH_OBJ)/functions.o
+SRC = $(wildcard $(PATH_SRC)/*.c)
+OBJ = $(SRC:$(PATH_SRC)/%.c=$(PATH_OBJ)/%.o)
 
 #Actions
 all : $(EXEC)
@@ -32,7 +32,7 @@ $(PATH_OBJ)/functions.o : $(PATH_SRC)/functions.c
 	$(CXX) $(OPTION) -o $@ -c $< -I$(PATH_INC)
 
 $(EXEC) : $(OBJ)
-	@echo "\033[31m[Link] $(EXEC)\033[00m"
+	@echo "\033[32m[Link] $(EXEC)\033[00m"
 	$(CXX) $(OPTION) -o $@ $^
 
 

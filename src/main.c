@@ -1,7 +1,7 @@
 /*
     Auteur : Rayan ROGAI + Jordan QUAGLIATINI
     Date : 16/02/2016
-    Description du programme : Vérifie si la syntaxe d'une phrase est correcte
+    Description du programme : Permet de jouer à la patate chaude
 */
 
 #include <stdio.h>
@@ -28,6 +28,8 @@ int main() {
     return 0;
 }
 
+/** Ici on joue à la version de la patate chaude avec élimination
+  */
 void patate_1() {
     srand(time(0));
     int nbTours = rand()%10;
@@ -57,21 +59,23 @@ void patate_1() {
 }
 
 
+/** Ici on joue à la version de la patate chaude sans élimination
+  */
 void patate_2() {
     srand(time(0));
-    int nbIterations = rand()%15;
+    //int nbIterations = rand()%15;
+    int nbTours = rand()%10 + 1;
 
     int i = 0;
     int j = 0;
 
     Liste liste = init();
 
-    Joueur courant = liste.tab[0];
+    Joueur courant = Tete(liste);
     Joueur tmpCourant;
 
-    while(j < nbIterations) {
+    while(!eachPlayerHasLostOnce(liste)) {
 
-        int nbTours = rand()%10 + 1;
         for(i = 0; i < nbTours; i++) {
             printf("%s a la patate\n", courant.nom);
             courant = suivant(liste, courant);
@@ -86,8 +90,8 @@ void patate_2() {
         j++;
     }
 
+    int min = j;
     j = 1;
-    int min = nbIterations;
     while(j < liste.nb_elements) {
         courant = liste.tab[0];
         if(courant.nbFroide < min) {

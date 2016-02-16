@@ -66,12 +66,59 @@ void ajouter(Liste l, Joueur j) {
 }
 
 void supprimer(Liste* l, Joueur j) {
+
+    if(isHead(*l, j)) {
+        if(j.suivant != -1) {
+            l->tete = j.suivant;
+        } else if (j.precedent != -1) {
+            l->tete = j.precedent;
+        }
+    }
+
     l->tab[j.precedent].suivant = j.suivant;
     l->tab[j.suivant].precedent = j.precedent;
     j.suivant = -1;
     j.precedent = -1;
 
     l->nb_elements--;
+}
+
+Bool isDeleted(Joueur j) {
+    return (j.suivant == -1 && j.precedent == -1);
+}
+
+Bool isHead(Liste l, Joueur j) {
+    if(!isDeleted(j)) {
+        if(j.precedent != -1) {
+            return l.tete == l.tab[j.precedent].suivant;
+        } else if (j.suivant != -1) {
+            return l.tete == l.tab[j.suivant].precedent;
+        }
+    }
+    return false;
+}
+
+Bool eachPlayerHasLostOnce(Liste l) {
+    int j = 0;
+    Joueur courant = Tete(l);
+    int limit = 1;
+    int winnerCount = 0;
+    while(j < l.nb_elements) {
+        if(courant.nbFroide == 0) {
+            winnerCount++;
+        }
+        if(winnerCount > limit) {
+            return false;
+        }
+        courant = suivant(l, courant);
+        j++;
+    }
+
+    return true;
+}
+
+Joueur Tete(Liste l) {
+    return l.tab[l.tete];
 }
 
 
