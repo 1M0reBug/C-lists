@@ -13,7 +13,7 @@ OBJ_DIR = obj
 
 #Liste fichiers .cpp et .O
 SRC = $(PATH_SRC)/main.c $(PATH_SRC)/functions.c
-OBJ = $(PATH_OBJ)/main.o $(PATH_SRC)/functions.o
+OBJ = $(PATH_OBJ)/main.o $(PATH_OBJ)/functions.o
 
 #Actions
 all : $(EXEC)
@@ -22,6 +22,8 @@ all : $(EXEC)
 debug : $(EXEC)
 	gdb ./$(EXEC)
 
+valgrind: $(EXEC)
+	valgrind ./$(EXEC)
 
 $(PATH_OBJ)/main.o : $(PATH_SRC)/main.c
 	$(CXX) $(OPTION) -o $@ -c $< -I$(PATH_INC)

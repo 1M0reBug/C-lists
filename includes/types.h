@@ -11,6 +11,7 @@ typedef struct joueur{
     char nom[30];
     int suivant;
     int precedent;
+    int nbFroide;
 }Joueur;
 
 typedef struct liste{

@@ -80,42 +80,52 @@ Liste init(){
   strcpy(liste.tab[0].nom, "Alain");
   liste.tab[0].suivant = 1 ;
   liste.tab[0].precedent = 9;
+  liste.tab[0].nbFroide = 0;
 
   strcpy(liste.tab[1].nom,"Benoit");
   liste.tab[1].suivant = 2 ;
   liste.tab[1].precedent = 0;
+  liste.tab[1].nbFroide = 0;
 
   strcpy(liste.tab[2].nom, "Christian");
   liste.tab[2].suivant = 3 ;
   liste.tab[2].precedent = 1;
+  liste.tab[2].nbFroide = 0;
 
   strcpy(liste.tab[3].nom, "David");
   liste.tab[3].suivant = 4 ;
   liste.tab[3].precedent = 2;
+  liste.tab[3].nbFroide = 0;
 
   strcpy(liste.tab[4].nom, "Emily");
   liste.tab[4].suivant = 5 ;
   liste.tab[4].precedent = 3;
+  liste.tab[4].nbFroide = 0;
 
   strcpy(liste.tab[5].nom, "Francois");
   liste.tab[5].suivant = 6 ;
   liste.tab[5].precedent = 4;
+  liste.tab[5].nbFroide = 0;
 
   strcpy(liste.tab[6].nom, "Guy");
   liste.tab[6].suivant = 7 ;
   liste.tab[6].precedent = 5;
+  liste.tab[6].nbFroide = 0;
 
   strcpy(liste.tab[7].nom, "Henri");
   liste.tab[7].suivant = 8 ;
   liste.tab[7].precedent = 6;
+  liste.tab[7].nbFroide = 0;
 
   strcpy(liste.tab[8].nom, "Ivan");
   liste.tab[8].suivant = 9 ;
   liste.tab[8].precedent = 7;
+  liste.tab[8].nbFroide = 0;
 
   strcpy(liste.tab[9].nom, "Jean");
   liste.tab[9].suivant = 0 ;
   liste.tab[9].precedent = 8;
+  liste.tab[9].nbFroide = 0;
 
   liste.tete = 0;
   liste.nb_elements = 10;
